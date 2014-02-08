@@ -30,7 +30,8 @@ public class ResubmissionPRGController {
 	}
 	
 	@RequestMapping(value = "/confirmCar", method = RequestMethod.GET)
-	public String confirmCar(@ModelAttribute("car")CarForm car, Model model){
+	public String confirmCar(@ModelAttribute("id")int id, Model model){
+		CarForm car = carService.get(id);
 		model.addAttribute("confirm", "Car is submitted:" + car);
 		return "confirmCar";
 	}
@@ -43,8 +44,8 @@ public class ResubmissionPRGController {
 	
 	@RequestMapping(value = "/car", method = RequestMethod.POST)
 	public String submitCar(CarForm car, RedirectAttributes redirectAttributes){
-		carService.add(car);
-		redirectAttributes.addFlashAttribute("car", car);
+		int id = carService.add(car);
+		redirectAttributes.addAttribute("id", id);
 		logger.info("Submit the Car:" + car);
 		return "redirect:confirmCar";
 	}

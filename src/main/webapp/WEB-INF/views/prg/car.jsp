@@ -2,9 +2,14 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	alert("hello");
+});
+</script>
 <form:form id="form" method="post" modelAttribute="carForm">	
 	<div class="header">
-  		<h2>Form</h2>
+  		<h2>Car Form</h2>
   		<form:label path="name">
   			Name 
  		</form:label>

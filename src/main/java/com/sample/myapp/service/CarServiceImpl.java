@@ -15,7 +15,7 @@ public class CarServiceImpl implements CarService{
 	private final Map<Integer, CarForm> repository = new HashMap<Integer, CarForm>();
 
 	@Override
-	public void add(CarForm car) {
+	public int add(CarForm car) {
 		Integer id = sequenceId.addAndGet(1);
 		car.setId(id);
 		repository.put(id, car);
@@ -25,6 +25,12 @@ public class CarServiceImpl implements CarService{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return id;
+	}
+
+	@Override
+	public CarForm get(int id) {
+		return repository.get(id);
 	}
 	
 	
