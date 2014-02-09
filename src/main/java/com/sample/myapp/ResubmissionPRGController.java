@@ -29,6 +29,13 @@ public class ResubmissionPRGController {
 		return "prg/car";
 	}
 	
+	@RequestMapping(value = "/multiform", method = RequestMethod.GET)
+	public String getMultiform(Model model){
+		model.addAttribute("carForm", new CarForm());
+		model.addAttribute("hotelForm", new HotelForm());
+		return "prg/multiform";
+	}	
+	
 	@RequestMapping(value = "/confirmCar", method = RequestMethod.GET)
 	public String confirmCar(@ModelAttribute("id")int id, Model model){
 		CarForm car = carService.get(id);

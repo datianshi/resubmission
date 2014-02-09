@@ -14,13 +14,19 @@
     <definition name="prg/car" extends="base.definition">
         <put-attribute name="title" value="Car Form" />
         <put-attribute name="body" value="/WEB-INF/views/prg/car.jsp" />
-        <put-attribute name="headerValue" value="PRG duplicate submission/prevent refersh resubmission" />
+        <put-attribute name="headerValue" value="Single Form PRG duplicate submission/prevent refersh resubmission" />
     </definition>
     
     <definition name="prg/hotel" extends="base.definition">
         <put-attribute name="title" value="Hotel Form" />
         <put-attribute name="body" value="/WEB-INF/views/prg/hotel.jsp" />
     </definition>
+    
+    <definition name="prg/multiform" extends="base.definition">
+        <put-attribute name="title" value="MultiForm" />
+        <put-attribute name="body" value="/WEB-INF/views/prg/multi.jsp" />
+        <put-attribute name="headerValue" value="Multi Form" />
+    </definition>    
     
     <definition name="confirmCar" extends="base.definition">
         <put-attribute name="title" value="Confirm Page" />

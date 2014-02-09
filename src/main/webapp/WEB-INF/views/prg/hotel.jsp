@@ -4,7 +4,7 @@
 
 <form:form id="form" method="post" modelAttribute="hotelForm">
 	<div class="header">
-  		<h2>Form</h2>
+  		<h2>Hotel Form</h2>
   		<form:label path="name">
   			Name 
  		</form:label>
