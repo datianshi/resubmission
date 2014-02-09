@@ -4,7 +4,13 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	alert("hello");
+	$("#form").submit(function() {
+	    var form = this;
+	    setTimeout(function() {
+	        $(':submit', form).attr('disabled', true);
+	    }, 50);
+	});
+	
 });
 </script>
 <form:form id="form" method="post" modelAttribute="carForm">	
